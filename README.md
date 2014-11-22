@@ -11,7 +11,7 @@ The block size specifies how many bits will be shuffled. The lower BLOCK_SIZE bi
 
 The intended use is that incrementing, consecutive integers will be used as keys to generate the short URLs. For example, when creating a new URL, the unique integer ID assigned by a database could be used to generate the URL by using this module. Or a simple counter may be used. As long as the same integer is not used twice, the same short URL will not be generated twice.
 
-The module supports both encoding and decoding of URLs. The min_length parameter allows you to pad the URL if you want it to be a specific length.
+The module supports both encoding and decoding of URLs. The `minLength` parameter allows you to pad the URL if you want it to be a specific length.
 
 
 Getting Started
