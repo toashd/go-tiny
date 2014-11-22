@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/toashd/go-tiny.svg)](https://travis-ci.org/toashd/go-tiny)
 Short Go URL Generator
 ---
 
