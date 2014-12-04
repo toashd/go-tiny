@@ -19,20 +19,20 @@ Getting Started
 --
 1: Download the package
 
-```
+```bash
 go get github.com/toashd/go-tiny/tiny
 ```
 
 2: Import go-tiny/tiny to your Go project
 
-```
+```go
 import "github.com/toashd/go-tiny/tiny"
 ```
 
 Example
 --
 
-```
+```go
 package main
 
 import (
