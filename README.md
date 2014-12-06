@@ -1,9 +1,11 @@
-[![Build Status](https://travis-ci.org/toashd/go-tiny.svg)](https://travis-ci.org/toashd/go-tiny)
-Short Go URL Generator
----
+# Short Go URL Generator
 
 Go implementation for generating Tiny URL- and bit.ly-like URLs.
 
+[![GoDoc](https://godoc.org/github.com/toashd/go-tiny/tiny?status.svg)](https://godoc.org/github.com/toashd/go-tiny/tiny)
+[![Build Status](https://travis-ci.org/toashd/go-tiny.svg)](https://travis-ci.org/toashd/go-tiny)
+
+### Description
 A bit-shuffling approach is used to avoid generating consecutive, predictable URLs. However, the algorithm is deterministic and will guarantee that no collisions will occur.
 
 The URL alphabet is fully customizable and may contain any number of characters. By default, digits and lower-case letters are used, with some removed to avoid confusion between characters like o, O and 0. The default alphabet is shuffled and has a prime number of characters to further improve the results of the algorithm.
@@ -15,8 +17,8 @@ The intended use is that incrementing, consecutive integers will be used as keys
 The module supports both encoding and decoding of URLs. The `minLength` parameter allows you to pad the URL if you want it to be a specific length.
 
 
-Getting Started
---
+### Getting Started
+
 1: Download the package
 
 ```bash
@@ -29,8 +31,7 @@ go get github.com/toashd/go-tiny/tiny
 import "github.com/toashd/go-tiny/tiny"
 ```
 
-Example
---
+### Example
 
 ```go
 package main
@@ -60,7 +61,7 @@ func main() {
 
 This example can also be found in the example.go file.
 
-License
---
+### License
+
 go-tiny is available under the MIT license.
 
