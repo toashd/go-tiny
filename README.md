@@ -51,7 +51,7 @@ func main() {
 	// Encodes url
 	var enc = t.EncodeUrl(url, 5)
 
-	// Prints ecoded url
+	// Prints encoded url
 	fmt.Printf("Encoded Url: %s\n", enc)
 
 	// Prints decoded url
