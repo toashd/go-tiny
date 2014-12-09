@@ -1,3 +1,6 @@
+// Go implementation for generating Tiny URL- and bit.ly-like URLs.
+// A bit-shuffling approach is used to avoid generating consecutive, predictable URLs.
+// However, the algorithm is deterministic and will guarantee that no collisions will occur.
 package tiny
 
 import (
