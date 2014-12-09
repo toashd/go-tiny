@@ -21,4 +21,3 @@ func main() {
 	// Prints decoded url
 	fmt.Printf("Decoded url: %v\n", t.DecodeUrl(enc))
 }
-

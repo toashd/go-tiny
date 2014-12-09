@@ -18,26 +18,26 @@ const (
 // TinyUrl generates a tiny url by using a bit-shuffling approach
 // to avoid generating consecutive, predictable URLs.
 type TinyUrl struct {
-	alphabet string
+	alphabet  string
 	blockSize int // specifies how many bits will be shuffled
-	mask int
-	mapping []int
+	mask      int
+	mapping   []int
 }
 
 // Initializes a new TinyUrl
 func New() *TinyUrl {
 	t := &TinyUrl{
-		alphabet: defaultAlphabet,
+		alphabet:  defaultAlphabet,
 		blockSize: defaultBlockSize,
-		mask: mask(defaultBlockSize),
-		mapping: mapping(defaultBlockSize),
+		mask:      mask(defaultBlockSize),
+		mapping:   mapping(defaultBlockSize),
 	}
 	return t
 }
 
 // Calculates mask depending on block size
 func mask(blockSize int) int {
-	return  (1 << uint64(blockSize)) - 1
+	return (1 << uint64(blockSize)) - 1
 }
 
 // Calculates mapping depending on block size
@@ -65,13 +65,13 @@ func (t *TinyUrl) DecodeUrl(n string) int {
 }
 
 func (t *TinyUrl) encode(n int) int {
-	return (n & ^t.mask) | t._encode(n & t.mask)
+	return (n & ^t.mask) | t._encode(n&t.mask)
 }
 
 func (t *TinyUrl) _encode(n int) int {
 	var result = 0
 	for i, m := range t.mapping {
-		if n & (1 << uint(i)) != 0 {
+		if n&(1<<uint(i)) != 0 {
 			result |= (1 << uint(m))
 		}
 	}
@@ -79,13 +79,13 @@ func (t *TinyUrl) _encode(n int) int {
 }
 
 func (t *TinyUrl) decode(n int) int {
-	return (n & ^t.mask) | t._decode(n & t.mask)
+	return (n & ^t.mask) | t._decode(n&t.mask)
 }
 
 func (t *TinyUrl) _decode(n int) int {
 	var result = 0
 	for i, m := range t.mapping {
-		if n & (1 << uint(m)) != 0 {
+		if n&(1<<uint(m)) != 0 {
 			result |= (1 << uint(i))
 		}
 	}
@@ -126,4 +126,3 @@ func reverseString(s string) string {
 	}
 	return string(runes[n:])
 }
-
