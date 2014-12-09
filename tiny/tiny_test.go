@@ -63,9 +63,9 @@ func TestDebase(t *testing.T) {
 
 }
 
-func TestGetMask(t *testing.T) {
+func TestMask(t *testing.T) {
 	var in, out = blockSize, 16777215
-	if x := getMask(in); x != out {
+	if x := mask(in); x != out {
 		t.Errorf("getMask(%v) = %v, want %v", in, x, out)
 	}
 }

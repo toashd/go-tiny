@@ -26,19 +26,19 @@ func New() *TinyUrl {
 	t := &TinyUrl{
 		alphabet: defaultAlphabet,
 		blockSize: defaultBlockSize,
-		mask: getMask(defaultBlockSize),
-		mapping: getMapping(defaultBlockSize),
+		mask: mask(defaultBlockSize),
+		mapping: mapping(defaultBlockSize),
 	}
 	return t
 }
 
 // Calculates mask depending on block size
-func getMask(blockSize int) int {
+func mask(blockSize int) int {
 	return  (1 << uint64(blockSize)) - 1
 }
 
 // Calculates mapping depending on block size
-func getMapping(blockSize int) []int {
+func mapping(blockSize int) []int {
 	n := blockSize
 	mapping := make([]int, n)
 	for i, _ := range mapping {
